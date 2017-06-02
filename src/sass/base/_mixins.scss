@@ -1,0 +1,50 @@
+@mixin media-min($width) {
+  @media screen and (min-width: $width) {
+    @content
+  }
+}@mixin media-max($width) {
+  @media screen and (max-width: $width) {
+    @content
+  }
+}
+
+@mixin placeholder() {
+  &::-webkit-input-placeholder {
+    @content
+  }
+  &:-moz-placeholder {
+    @content
+  }
+  &::-moz-placeholder {
+    @content
+  }
+  &:-ms-input-placeholder {
+    @content
+  }
+}
+
+@mixin size($w, $h:$w) {
+  width: $w;
+  height: $h;
+}
+@mixin text-beautifier() {
+  overflow: hidden;
+  word-break: keep-all;
+  text-overflow: ellipsis;
+}
+
+@mixin hover-state {
+  &:hover, &:active, &:focus {
+    @content;
+  }
+}
+
+@mixin pseudo ($content: '', $display: block, $pos: absolute){
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+@mixin myTransition ($for: all, $duration : .3s)  {
+  transition: $for $duration ease-in-out;
+}
